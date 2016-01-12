@@ -23,7 +23,7 @@ import (
 	}
 
 func main() {
-	rootfs := "/vagrant/libcontainer-lxc/busybox/rootfs"
+	rootfs := os.Getenv("ROOTFS")
 	
 	factory, err := libcontainer.New(rootfs,libcontainer.Cgroupfs)
 
